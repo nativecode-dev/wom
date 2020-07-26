@@ -1,0 +1,10 @@
+{
+  "imports": {
+    "alosaur/": "https://deno.land/x/alosaur@v0.21.1/",
+    "deno-connectors/": "https://raw.githubusercontent.com/nativecode-dev/deno-connectors/v0.1.2/",
+    "dent/": "https://raw.githubusercontent.com/nativecode-dev/dent/v0.5.0/",
+    "std/": "https://deno.land/std@0.62.0/",
+    "transformer": "https://jspm.dev/class-transformer@0.2.3",
+    "validator": "https://jspm.dev/class-validator@0.8.5"
+  }
+}

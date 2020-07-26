@@ -1,0 +1,16 @@
+{
+  "name": "womapi",
+  "script": "bash run.sh",
+  "watch": [
+    ".config",
+    "womapi"
+  ],
+  "env": {
+    "DEBUG": "wom:*",
+    "DENO_ENV": "test"
+  },
+  "env_prod": {
+    "DEBUG": "wom:*",
+    "DENO_ENV": "prod"
+  }
+}
