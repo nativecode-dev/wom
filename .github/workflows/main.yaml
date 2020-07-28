@@ -1,4 +1,4 @@
-name: CI
+name: bundle
 
 on:
   push:
@@ -8,12 +8,13 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
 
     steps:
       - uses: actions/checkout@v2
       - uses: denolib/setup-deno@v2.1.0
+
       - run: mkdir -p dist
 
-      - name: build
+      - name: bundle
         run: deno bundle --config tsconfig.json --importmap importmap.json --unstable mod.ts dist/wom.js
