@@ -13,8 +13,6 @@ jobs:
       - name: checkout
       - uses: actions/checkout@v2
 
-      - name: setup-deno
+      - name: test
         uses: denolib/setup-deno@v2.1.0
-
-      - name: build
         run: deno test -A --config tsconfig.json --unstable
