@@ -1,9 +1,10 @@
 name: CI
+
 on:
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    branches:
+      - master
+      - develop
 
 jobs:
   build:
@@ -11,8 +12,10 @@ jobs:
 
     steps:
       - name: checkout
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
+
+      - name: setup-deno
+        uses: denolib/setup-deno@v2.1.0
 
       - name: test
-        uses: denolib/setup-deno@v2.1.0
         run: deno test -A --config tsconfig.json --unstable
