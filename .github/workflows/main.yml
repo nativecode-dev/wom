@@ -17,5 +17,5 @@ jobs:
       - name: setup-deno
         uses: denolib/setup-deno@v2.1.0
 
-      - name: test
-        run: deno test -A --config tsconfig.json --unstable
+      - name: build
+        run: deno bundle -A --config tsconfig.json --unstable mod.ts
