@@ -1,4 +1,4 @@
-import { plainToClass } from "transformer";
+import transformer from "transformer";
 
 import { Lincoln, LoggerType } from "dent/lincoln/mod.ts";
 import { App, Injectable, Inject, container } from "alosaur/mod.ts";
@@ -39,7 +39,7 @@ export class Server {
     this.app.useTransform({
       type: "body",
       getTransform: (transform: any, body: any) =>
-        plainToClass(transform, body),
+        transformer(transform, body),
     });
 
     return await this.app.listen({

@@ -11,11 +11,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: checkout
-        uses: actions/checkout@v2
-
-      - name: setup-deno
-        uses: denolib/setup-deno@v2.1.0
+      - uses: actions/checkout@v2
+      - uses: denolib/setup-deno@v2.1.0
+      - run: mkdir -p dist
 
       - name: build
-        run: deno bundle --config tsconfig.json --importmap importmap.json --unstable mod.ts
+        run: deno bundle --config tsconfig.json --importmap importmap.json --unstable mod.ts dist/wom.js
